@@ -19,6 +19,9 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: daily sales data
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+        freshness:
+          warn_after: {count: 90, period: day}
         columns:
           - name: date_date
             description: date of purchase
