@@ -55,7 +55,7 @@ models:
   - name: int_sales_margin
     description: joining of sales and products to compute for margin
     columns:
-      - name: date_dae
+      - name: date_date
         description: date of sale
       - name: orders_id
         description: unique id for transaction
@@ -73,7 +73,7 @@ models:
         description: revenue minus purchase cost
     tests:
       - unique:
-          column_name: "(orders_id || '-' || pdt_id)"
+          column_name: "(orders_id || '-' || products_id)"
   - name: int_orders_margin
     description: kpi computation by order id
     columns:
