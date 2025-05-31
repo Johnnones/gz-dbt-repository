@@ -9,4 +9,4 @@ sources:
       - name: sales
         identifier: raw_gz_sales
       - name: ship
-        identifier: raw_gz_hip
+        identifier: raw_gz_ship
