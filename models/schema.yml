@@ -51,3 +51,77 @@ sources:
             description: cost of storing products
           - name: ship_cost
             description: cost of shipping products
+models:
+  - name: int_sales_margin
+    description: joining of sales and products to compute for margin
+    columns:
+      - name: date_dae
+        description: date of sale
+      - name: orders_id
+        description: unique id for transaction
+      - name: products_id
+        description: unique id for product sold
+      - name: revenue
+        description: turnover for a particular product
+      - name: quantity
+        description: quantity purchased for a specific product
+      - name: purchase_price
+        description: cost of product acquisition
+      - name: purchase_cost
+        description: quantity times purchase price
+      - name: margin
+        description: revenue minus purchase cost
+    tests:
+      - unique:
+          column_name: "(orders_id || '-' || pdt_id)"
+  - name: int_orders_margin
+    description: kpi computation by order id
+    columns:
+      - name: orders_id
+        description: unique id for transaction
+        tests:
+          - unique
+          - not_null
+      - name: date_date
+        description: date of sales
+      - name: revenue
+        description: turnover per order
+      - name: quantity
+        description: quantity per order
+      - name: purchase_cost
+        description: purchase cost per order
+      - name: margin
+        description: margin per order
+  - name: int_orders_operational
+    description: margin computation after shipping fees, log costs, and shipping costs
+    columns:
+      - name: orders_id
+        description: unique id for transaction
+        tests:
+          - unique
+          - not_null
+      - name: date_date
+        description: date of sales
+      - name: revenue
+        description: turnover per order
+      - name: quantity
+        description: quantity per order
+      - name: purchase_cost
+        description: purchase cost per order
+      - name: margin
+        description: margin per order
+      - name: shipping_fee
+        description: revenue made for shipment by order
+      - name: log_cost
+        description: cost of storing products by order
+      - name: ship_cost
+        description: cost of shipping products by order
+      - name: operational_margin
+        description: margin after shipping fee, log costs, and shipping costs
+  - name: finance_days
+    description: finance kpi cmputation by day
+    columns:
+      - name: date_date
+        description: date of transaction
+      - name: nb_transactions
+        description: total number of transactions per day
