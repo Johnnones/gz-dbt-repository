@@ -1,5 +1,5 @@
 version: 1
-
+  
 sources:
   - name: raw
     schema: gz_raw_data
@@ -52,6 +52,9 @@ sources:
           - name: ship_cost
             description: cost of shipping products
 models:
+  dbt_jnones:
+    mart:
+      +materialized: table
   - name: int_sales_margin
     description: joining of sales and products to compute for margin
     columns:
