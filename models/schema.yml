@@ -52,7 +52,7 @@ sources:
           - name: ship_cost
             description: cost of shipping products
 models:
-  dbt_jnones:
+  my_new_project:
     mart:
       +materialized: table
   - name: int_sales_margin
