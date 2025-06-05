@@ -197,3 +197,23 @@ models:
         description: date of transaction
       - name: nb_transactions
         description: total number of transactions per day
+  - name: int_campaigns
+    description: combined campaign details from all ad sources
+    columns:
+      - name: date_date
+        description: campaign date
+      - name: paid_source
+        description: campaign source
+      - name: campaign_key
+        description: campaign key
+      - name: camPGN_name
+        description: campaign name
+      - name: ads_cost
+        description: cost of the ad
+      - name: impression
+        description: number of impressions
+      - name: click
+        description: number of clicks
+    tests:
+      - unique:
+          column_name: "(date_date || '-' || paid_source)"
