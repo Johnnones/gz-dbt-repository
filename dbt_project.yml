@@ -41,4 +41,4 @@ models:
     mart:
       +materialized: table
       finance:
-        schema: dbt_john_nones
+        schema: dbt_john_finance
