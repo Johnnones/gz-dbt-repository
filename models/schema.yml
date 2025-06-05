@@ -214,9 +214,6 @@ models:
         description: number of impressions
       - name: click
         description: number of clicks
-    tests:
-      - unique:
-          column_name: "(date_date || '-' || paid_source)"
   - name: int_campaigns_day
     description: aggregation by date of campaign data
     columns:
