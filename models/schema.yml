@@ -51,6 +51,78 @@ sources:
             description: cost of storing products
           - name: ship_cost
             description: cost of shipping products
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: campaign details from adwords
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: campaign source
+          - name: campaign_key
+            description: campaign key
+          - name: camPGN_name
+            description: campaign name
+          - name: ads_cost
+            description: cost of the ad
+          - name: impression
+            description: number of impressions
+          - name: click
+            description: number of clicks
+      - name: bing
+        identifier: raw_gz_bing
+        description: campaign details from bing
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: campaign source
+          - name: campaign_key
+            description: campaign key
+          - name: camPGN_name
+            description: campaign name
+          - name: ads_cost
+            description: cost of the ad
+          - name: impression
+            description: number of impressions
+          - name: click
+            description: number of clicks
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: campaign details from criteo
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: campaign source
+          - name: campaign_key
+            description: campaign key
+          - name: camPGN_name
+            description: campaign name
+          - name: ads_cost
+            description: cost of the ad
+          - name: impression
+            description: number of impressions
+          - name: click
+            description: number of clicks  
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: campaign details from facebook
+        columns:
+          - name: date_date
+            description: campaign date
+          - name: paid_source
+            description: campaign source
+          - name: campaign_key
+            description: campaign key
+          - name: camPGN_name
+            description: campaign name
+          - name: ads_cost
+            description: cost of the ad
+          - name: impression
+            description: number of impressions
+          - name: click
+            description: number of clicks
 models:
   - name: int_sales_margin
     description: joining of sales and products to compute for margin
