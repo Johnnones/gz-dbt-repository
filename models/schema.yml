@@ -217,3 +217,18 @@ models:
     tests:
       - unique:
           column_name: "(date_date || '-' || paid_source)"
+  - name: int_campaigns_day
+    description: aggregation by date of campaign data
+    columns:
+      - name: date_date
+        description: campaign date
+        tests:
+          - unique
+          - not_null
+      - name: ads_cost
+        description: cost of the ad
+      - name: impression
+        description: number of impressions
+      - name: click
+        description: number of clicks
+          
